@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3S8-wU-jsh">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="IKC-v4-IvI">
+            <objects>
+                <tabBarController id="3S8-wU-jsh" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="UOQ-Gl-7Qx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="9hP-zU-dFX"/>
+                        <segue destination="rFv-XA-3ep" kind="relationship" relationship="viewControllers" id="16E-AN-hVb"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qWb-FX-weR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1083" y="26"/>
+        </scene>
+        <!--game-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BreakoutViewController" customModule="Breakout" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="qse-NZ-9l2" appends="YES" id="edr-Fq-Plp"/>
+                            <outletCollection property="gestureRecognizers" destination="t7g-cZ-2bH" appends="YES" id="OBR-4a-KcV"/>
+                        </connections>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="game" id="g06-iD-Hkl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="qse-NZ-9l2">
+                    <connections>
+                        <action selector="start:" destination="BYZ-38-t0r" id="F6L-Ju-bEp"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="t7g-cZ-2bH">
+                    <connections>
+                        <action selector="movePaddle:" destination="BYZ-38-t0r" id="Bwa-e2-Fyb"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-139" y="-439"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="s3C-iO-Yka">
+            <objects>
+                <viewController id="rFv-XA-3ep" customClass="SettingsViewController" customModule="Breakout" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k4D-Rl-tlu"/>
+                        <viewControllerLayoutGuide type="bottom" id="MKL-AT-3Nt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aVm-O9-Xls">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4FS-xz-u3G">
+                                <rect key="frame" x="18" y="54" width="564" height="31"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="changeSpeed:" destination="rFv-XA-3ep" eventType="valueChanged" id="nEk-RF-q5G"/>
+                                </connections>
+                            </slider>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Speed" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PD3-nI-No7">
+                                <rect key="frame" x="20" y="28" width="560" height="18"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="d0D-sQ-0mk">
+                                <rect key="frame" x="486" y="93" width="94" height="29"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="changeRows:" destination="rFv-XA-3ep" eventType="valueChanged" id="0tg-AE-m4H"/>
+                                </connections>
+                            </stepper>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="laJ-Dj-UZv">
+                                <rect key="frame" x="486" y="130" width="94" height="29"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="changeSpecialBricks:" destination="rFv-XA-3ep" eventType="valueChanged" id="afC-ot-lQh"/>
+                                </connections>
+                            </stepper>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0cP-xu-fBD">
+                                <rect key="frame" x="465" y="99" width="13" height="18"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ehY-Gv-Fog">
+                                <rect key="frame" x="465" y="136" width="13" height="18"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Number Of Rows" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iXi-Zh-RQs">
+                                <rect key="frame" x="20" y="99" width="121" height="18"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Number Of Special Bricks" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JMz-A1-W6U">
+                                <rect key="frame" x="20" y="136" width="180" height="18"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ehY-Gv-Fog" firstAttribute="centerY" secondItem="laJ-Dj-UZv" secondAttribute="centerY" id="4lS-Kc-ypp"/>
+                            <constraint firstItem="iXi-Zh-RQs" firstAttribute="centerY" secondItem="d0D-sQ-0mk" secondAttribute="centerY" id="7qb-sP-vLi"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="iXi-Zh-RQs" secondAttribute="leading" id="Ahz-TY-7aG"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="JMz-A1-W6U" secondAttribute="leading" id="CQ2-Kf-YMP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4FS-xz-u3G" secondAttribute="trailing" id="IZA-u4-1EH"/>
+                            <constraint firstItem="4FS-xz-u3G" firstAttribute="leading" secondItem="PD3-nI-No7" secondAttribute="leading" id="LH2-O2-Rtl"/>
+                            <constraint firstItem="laJ-Dj-UZv" firstAttribute="leading" secondItem="ehY-Gv-Fog" secondAttribute="trailing" constant="8" id="Nu3-mz-fBH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PD3-nI-No7" secondAttribute="trailing" id="Qfu-4k-Icc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d0D-sQ-0mk" secondAttribute="trailing" id="WlM-b9-qLb"/>
+                            <constraint firstItem="laJ-Dj-UZv" firstAttribute="top" secondItem="d0D-sQ-0mk" secondAttribute="bottom" constant="8" id="Xj9-6P-b3M"/>
+                            <constraint firstItem="PD3-nI-No7" firstAttribute="top" secondItem="k4D-Rl-tlu" secondAttribute="bottom" constant="8" id="a5u-fp-pr3"/>
+                            <constraint firstItem="d0D-sQ-0mk" firstAttribute="top" secondItem="4FS-xz-u3G" secondAttribute="bottom" constant="9" id="bNM-d3-pxP"/>
+                            <constraint firstItem="0cP-xu-fBD" firstAttribute="centerY" secondItem="d0D-sQ-0mk" secondAttribute="centerY" id="bai-ga-cto"/>
+                            <constraint firstItem="d0D-sQ-0mk" firstAttribute="leading" secondItem="0cP-xu-fBD" secondAttribute="trailing" constant="8" id="bhQ-5D-8S4"/>
+                            <constraint firstItem="JMz-A1-W6U" firstAttribute="centerY" secondItem="laJ-Dj-UZv" secondAttribute="centerY" id="hh0-jR-zo2"/>
+                            <constraint firstItem="4FS-xz-u3G" firstAttribute="top" secondItem="PD3-nI-No7" secondAttribute="bottom" constant="8" id="hwd-gj-x5z"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="PD3-nI-No7" secondAttribute="leading" id="lL3-Z5-z7g"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="laJ-Dj-UZv" secondAttribute="trailing" id="ziT-ae-HK8"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" id="XRr-ss-kbV"/>
+                    <connections>
+                        <outlet property="changeNumberOfRows" destination="d0D-sQ-0mk" id="OkO-7Y-oCP"/>
+                        <outlet property="changeNumberOfSpecialBricks" destination="laJ-Dj-UZv" id="mZS-y2-hMb"/>
+                        <outlet property="numberOfRows" destination="0cP-xu-fBD" id="uBp-5w-RD2"/>
+                        <outlet property="numberOfSpecialBricks" destination="ehY-Gv-Fog" id="4PV-ZI-Dri"/>
+                        <outlet property="speedValue" destination="4FS-xz-u3G" id="Sf3-jw-r5W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QrQ-jd-k1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-151" y="372"/>
+        </scene>
+    </scenes>
+</document>
